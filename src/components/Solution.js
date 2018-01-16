@@ -11,7 +11,15 @@ export default class Solution extends Component {
   }
 
   parsePath(path) {
-    return null
+    return {
+      findsbr: {
+        packages: {
+          search: {
+
+          }
+        }
+      }
+    }
   }
 
   componentDidMount() {
@@ -36,10 +44,7 @@ export default class Solution extends Component {
   renderResults() {
     let data = this.state.data
 
-    let output = []
-    for (let i in data) {
-      output.append(<li>{ data[i] }</li>)
-    }
+    let output = <pre> { JSON.stringify(data, 0, 2) } </pre>
 
     if (data.length < 1) {
       return (
